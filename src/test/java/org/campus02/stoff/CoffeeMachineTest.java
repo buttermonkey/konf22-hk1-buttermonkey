@@ -59,6 +59,8 @@ class CoffeeMachineTest {
      */
     @Test
     void checkMinimumLevelAfterFill() {
+        coffeeMachine.fill();
+        assertTrue(coffeeMachine.checkMinimumLevel());
     }
 
     /**
