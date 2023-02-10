@@ -70,6 +70,10 @@ class CoffeeMachineTest {
      */
     @Test
     void brewSuccessAmericano() {
+        coffeeMachine.fill();
+        assertEquals("americano brewed", coffeeMachine.brew("americano"));
+        assertEquals(100, coffeeMachine.getCurrentWaterLevel());
+        assertEquals(270, coffeeMachine.getCurrentCoffeeBeansLevel());
     }
 
     /**
