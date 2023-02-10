@@ -83,7 +83,10 @@ class CoffeeMachineTest {
      */
     @Test
     void brewMelange() {
-
+        coffeeMachine.fill();
+        assertEquals("Coffee not offered", coffeeMachine.brew("melange"));
+        assertEquals(200, coffeeMachine.getCurrentWaterLevel());
+        assertEquals(300, coffeeMachine.getCurrentCoffeeBeansLevel());
     }
 
     /**
