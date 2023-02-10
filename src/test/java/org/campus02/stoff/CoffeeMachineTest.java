@@ -1,6 +1,9 @@
 package org.campus02.stoff;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class CoffeeMachineTest {
 
@@ -11,7 +14,11 @@ class CoffeeMachineTest {
      */
     @Test
     void testConstructor() {
-
+        CoffeeMachine cm = new CoffeeMachine(200, 300);
+        assertEquals(200, cm.getMaxWaterLevel());
+        assertEquals(300, cm.getMaxCoffeeBeansLevel());
+        assertEquals(0, cm.getCurrentWaterLevel());
+        assertEquals(0, cm.getCurrentCoffeeBeansLevel());
     }
 
     /**
