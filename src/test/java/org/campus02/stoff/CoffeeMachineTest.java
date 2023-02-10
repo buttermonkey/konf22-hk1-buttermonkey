@@ -26,6 +26,10 @@ class CoffeeMachineTest {
      */
     @Test
     void fill() {
+        CoffeeMachine cm = new CoffeeMachine(200, 300);
+        cm.fill();
+        assertEquals(200, cm.getCurrentWaterLevel());
+        assertEquals(300, cm.getCurrentCoffeeBeansLevel());
     }
 
     /**
@@ -33,6 +37,11 @@ class CoffeeMachineTest {
      */
     @Test
     void clean() {
+        CoffeeMachine cm = new CoffeeMachine(200, 300);
+        cm.fill();
+        cm.clean();
+        assertEquals(0, cm.getCurrentWaterLevel());
+        assertEquals(0, cm.getCurrentCoffeeBeansLevel());
     }
 
     /**
