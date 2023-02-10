@@ -2,14 +2,14 @@ package org.campus02;
 
 public class CoffeeMachine {
 
-    private int maxWaterLevel;
-    private int maxCoffeeBeansLevel;
+    private final int maxWaterLevel;
+    private final int maxCoffeeBeansLevel;
     private int currentWaterLevel;
     private int currentCoffeeBeansLevel;
 
     public CoffeeMachine(int maxWaterLevel, int maxCoffeeBeansLevel) {
         this.maxWaterLevel = maxWaterLevel;
-        this.maxCoffeeBeansLevel = 0;
+        this.maxCoffeeBeansLevel = maxCoffeeBeansLevel;
         this.currentWaterLevel = 0;
         this.currentCoffeeBeansLevel = 0;
     }
@@ -47,9 +47,8 @@ public class CoffeeMachine {
      *
      */
     public void fill() {
-        // TODO fill machine
-        // currentWaterLevel to maxWaterLevel
-        // currentCoffeeBeansLevel to maxCoffeeBeansLevel
+        currentWaterLevel = maxWaterLevel;
+        currentCoffeeBeansLevel = maxCoffeeBeansLevel;
     }
 
     /**
