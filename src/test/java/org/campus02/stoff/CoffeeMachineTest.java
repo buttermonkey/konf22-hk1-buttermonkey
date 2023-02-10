@@ -95,6 +95,9 @@ class CoffeeMachineTest {
      * (don't forget to fill the machine)
      */
     void brew3EspressoDoppoWithMaxWaterLevel250() {
-
+        coffeeMachine.fill();
+        assertEquals("espresso doppo brewed", coffeeMachine.brew("espresso doppo"));
+        assertEquals(100, coffeeMachine.getCurrentWaterLevel());
+        assertEquals(250, coffeeMachine.getCurrentCoffeeBeansLevel());
     }
 }
