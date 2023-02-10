@@ -84,12 +84,12 @@ public class CoffeeMachine {
             case "americano":
                 currentWaterLevel -= 100;
                 currentCoffeeBeansLevel -= 30;
+                break;
             case "espresso doppo":
-                currentCoffeeBeansLevel -= 100;
+                currentWaterLevel -= 100;
                 currentCoffeeBeansLevel -= 50;
                 break;
             default:
-                currentWaterLevel -= 200;
                 return "Coffee not offered";
         }
         return coffee + " brewed";
