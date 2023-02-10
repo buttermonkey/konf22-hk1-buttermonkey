@@ -51,6 +51,7 @@ class CoffeeMachineTest {
      */
     @Test
     void checkMinimumLevelBeforeFill() {
+        assertFalse(coffeeMachine.checkMinimumLevel());
     }
 
     /**
