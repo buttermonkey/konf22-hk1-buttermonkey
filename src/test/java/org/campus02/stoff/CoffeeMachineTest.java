@@ -1,24 +1,28 @@
 package org.campus02.stoff;
 
-import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CoffeeMachineTest {
 
+    CoffeeMachine coffeeMachine;
 
+    @BeforeEach
+    void setup() {
+        coffeeMachine = new CoffeeMachine(200, 300);
+    }
 
     /**
      * create a coffeemachine and verify the initial values
      */
     @Test
     void testConstructor() {
-        CoffeeMachine cm = new CoffeeMachine(200, 300);
-        assertEquals(200, cm.getMaxWaterLevel());
-        assertEquals(300, cm.getMaxCoffeeBeansLevel());
-        assertEquals(0, cm.getCurrentWaterLevel());
-        assertEquals(0, cm.getCurrentCoffeeBeansLevel());
+        assertEquals(200, coffeeMachine.getMaxWaterLevel());
+        assertEquals(300, coffeeMachine.getMaxCoffeeBeansLevel());
+        assertEquals(0, coffeeMachine.getCurrentWaterLevel());
+        assertEquals(0, coffeeMachine.getCurrentCoffeeBeansLevel());
     }
 
     /**
@@ -26,10 +30,9 @@ class CoffeeMachineTest {
      */
     @Test
     void fill() {
-        CoffeeMachine cm = new CoffeeMachine(200, 300);
-        cm.fill();
-        assertEquals(200, cm.getCurrentWaterLevel());
-        assertEquals(300, cm.getCurrentCoffeeBeansLevel());
+        coffeeMachine.fill();
+        assertEquals(200, coffeeMachine.getCurrentWaterLevel());
+        assertEquals(300, coffeeMachine.getCurrentCoffeeBeansLevel());
     }
 
     /**
@@ -37,11 +40,10 @@ class CoffeeMachineTest {
      */
     @Test
     void clean() {
-        CoffeeMachine cm = new CoffeeMachine(200, 300);
-        cm.fill();
-        cm.clean();
-        assertEquals(0, cm.getCurrentWaterLevel());
-        assertEquals(0, cm.getCurrentCoffeeBeansLevel());
+        coffeeMachine.fill();
+        coffeeMachine.clean();
+        assertEquals(0, coffeeMachine.getCurrentWaterLevel());
+        assertEquals(0, coffeeMachine.getCurrentCoffeeBeansLevel());
     }
 
     /**
